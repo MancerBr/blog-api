@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  blog_db:
+    image: postgres
+    container_name: blog_db
+    ports:
+      - "5433:5432"
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  blog-api:
+    build:
+      target: development
+      context: .
+    container_name: blog-api
+    depends_on:
+      - blog_db
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app/blog-api
+      - node_modules:/app/blog-api/node_modules
+
+volumes:
+  pgdata:
+  node_modules:
