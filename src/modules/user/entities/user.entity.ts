@@ -1,9 +1,4 @@
-import {
-  Entity,
-  Column,
-  OneToMany,
-  BeforeInsert,
-} from 'typeorm';
+import { Entity, Column, OneToMany, BeforeInsert } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 
 import { Post } from '../../post/entities';

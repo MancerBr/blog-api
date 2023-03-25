@@ -37,4 +37,7 @@ $ npm run migration:generate src/database/migrations/MigrationName
 
 # You can revert your migration
 $ npm run migration:revert
+
+# Run seeders
+$ npm run seed
 ```

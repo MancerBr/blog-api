@@ -20,3 +20,8 @@ export const dataSourceOptions: DataSourceOptions = {
   migrationsRun: false,
   ssl: false,
 };
+
+export const seedDataSourceOptions: DataSourceOptions = {
+  ...dataSourceOptions,
+  logging: ['warn', 'error'],
+};
